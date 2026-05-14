@@ -1,2 +1,2 @@
 console.log("Hello Nodejs");
-console.log(global)
+console.log(global);
