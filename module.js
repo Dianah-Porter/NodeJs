@@ -29,3 +29,27 @@ fs.writeFile('./output.txt', 'This is a sample text written to the file.', (err)
     }}
 );
 console.log('Writing to file...');
+
+//directories
+if(!fs.existsSync('./assets')) {
+fs.mkdir('./assets', (err) => {
+    if(err) {
+        console.error("Error creating directory: " + err);
+    } else {
+        console.log("Directory created successfully.");
+    }
+})
+};
+
+//deleting a file
+if(fs.existsSync('./assets/deleteme.txt')) {
+    fs.unlink('./assets/deleteme.txt', (err) => {
+        if(err){
+            console.log(err);
+        }
+        console.log('file deleted!')
+    });
+}
+
+
+//Streams and Buffers 
